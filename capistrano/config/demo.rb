@@ -1,6 +1,6 @@
 
-set   :domain,            "dev.redexperts.net"
-set   :deploy_to,         "/var/www/vhosts/redexperts.net/subdomains/symfony-sandbox.dev/httpdocs"
+set   :domain,            "demo.redexperts.net"
+set   :deploy_to,         "/var/www/vhosts/redexperts.net/subdomains/symfony-sandbox.demo/httpdocs"
 set   :user,              "jenkins"
 set   :use_sudo,          false
 
@@ -10,7 +10,6 @@ role  :web,        domain
 role  :app,        domain
 role  :db,         domain
 
-set   :parameters_file, "parameters.dev.yml"
-
+set   :parameters_file, "parameters.demo.yml"
 
 after "deploy:setup", "deploy:upload_parameters"
