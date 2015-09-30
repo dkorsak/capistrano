@@ -20,7 +20,8 @@
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3",
-        "phpunit/phpunit": "4.8.x"
+        "phpunit/phpunit": "4.8.x",
+        "phpmd/phpmd" : "@stable"
     },
     "scripts": {
         "post-install-cmd": [
