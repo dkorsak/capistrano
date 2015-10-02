@@ -1,3 +1,5 @@
+# requires phpunit/phpunit in the composer.json require-dev section
+# executes PHP Unit Test without code coverage report
 
 desc "Executing PHPUnit tests without code coverage."
 task :pu do

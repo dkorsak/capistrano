@@ -1,3 +1,5 @@
+# requires "phpmd/phpmd" in the composer.json require-dev section
+# more details http://phpmd.org/
 
 desc "Creating PHP Mess Detector report"
 task :phpmd do

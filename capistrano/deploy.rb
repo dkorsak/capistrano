@@ -24,7 +24,12 @@ set :model_manager,    "doctrine"
 set :keep_releases,    2
 set :use_composer,     true
 
+################## code report configuration ############################################
+
 set :enable_mess_detector_debug, false
+set :enable_coding_standard_debug, false
+
+
 
 set :shared_files,     [app_config_path + "/parameters.yml", app_config_path + "/parameters.yml.dist"]
 set :shared_children,  [app_path + "/logs", web_path + "/uploads", "vendor"]
