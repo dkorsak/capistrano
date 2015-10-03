@@ -1,5 +1,8 @@
 namespace :deploy do
     task :builddb do
-        puts "Build database on the server"
+        symfony.doctrine.database:drop
+        symfony.doctrine.database:create
+        symfony.doctrine.schema:create
+        symfony.doctrine.load_fixtures
     end
 end

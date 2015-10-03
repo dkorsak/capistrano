@@ -1,5 +1,5 @@
 # checking Symfony2 coding standards
-# requires squizlabs/php_codesniffer and escapestudios/symfony2-coding-standard in the composer.json required-dev section
+# requires "squizlabs/php_codesniffer" and "escapestudios/symfony2-coding-standard" in the composer.json required-dev section
 # more details https://github.com/escapestudios/Symfony2-coding-standard
 # more details https://github.com/squizlabs/PHP_CodeSniffer
 

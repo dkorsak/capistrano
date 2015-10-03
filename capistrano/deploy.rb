@@ -1,8 +1,8 @@
 set :application,      "Project Name"
 
-set :stages,        %w(local dev)
-set :default_stage, "local"
-set :stage_dir,     "capistrano/config"
+set :stages,           %w(local dev)
+set :default_stage,    "local"
+set :stage_dir,        "capistrano/config"
 require 'capistrano/ext/multistage'
 
 
@@ -28,19 +28,16 @@ set :use_composer,     true
 
 set :enable_mess_detector_debug, false
 set :enable_coding_standard_debug, false
+set :enable_copy_paste_detector_debug, false
 
 
-
-set :shared_files,     [app_config_path + "/parameters.yml", app_config_path + "/parameters.yml.dist"]
+set :shared_files,     []
 set :shared_children,  [app_path + "/logs", web_path + "/uploads", "vendor"]
-set :copy_exclude,     [app_config_path + "/parameters*", "bin", app_path + "/logs", app_path + "/cache", "vendor", "capistrano", "composer.phar", test_result_path, ".git", ".gitignore", ".idea", "Capfile"]
+#set :copy_exclude,     [app_config_path + "/parameters*", "bin", app_path + "/logs", app_path + "/cache", "vendor", "capistrano", "composer.phar", test_result_path, ".git", ".gitignore", ".idea", "Capfile", ".php_cs"]
+
+set :copy_exclude,     File.open(File.dirname(__FILE__) + "/copy_exclude.txt").readlines
+
 set :interactive_mode, false
-
 default_run_options[:pty] = true
-
 logger.level = Logger::MAX_LEVEL
 
-
-before "deploy", "build:all"
-after "deploy", "deploy:delete_build_files"
-after "deploy", "deploy:cleanup"

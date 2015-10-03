@@ -6,5 +6,4 @@ task :builddb do
     system("#{php_bin} #{symfony_console} doctrine:database:create --env=#{env}")
     system("#{php_bin} #{symfony_console} doctrine:schema:create --env=#{env}")
     #system("#{php_bin} #{symfony_console} doctrine:fixtures:load --env=#{env} --no-interaction")
-    capifony_puts_ok
 end

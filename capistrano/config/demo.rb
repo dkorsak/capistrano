@@ -13,3 +13,9 @@ role  :db,         domain
 set   :parameters_file, "parameters.demo.yml"
 
 after "deploy:setup", "deploy:upload_parameters"
+
+before "deploy", "build:all"
+#after "symfony:cache:warmup", "deploy:migrate_database"
+after "symfony:cache:warmup", "deploy:builddb"
+after "deploy", "deploy:delete_build_files"
+after "deploy", "deploy:cleanup"

@@ -1,0 +1,13 @@
+app_config_path + "/parameters*"
+"bin"
+app_path + "/logs"
+app_path + "/cache"
+"vendor"
+"capistrano"
+"composer.phar"
+test_result_path
+".git"
+".gitignore"
+".idea"
+"Capfile"
+".php_cs"

@@ -7,6 +7,6 @@ task :composer do
         capifony_pretty_print "--> Updating composer"
         system("#{php_bin} composer.phar self-update")
     end
-    capifony_pretty_print "--> Install vendors"
+    capifony_pretty_print "--> Installing vendors"
     system("#{php_bin} ./composer.phar install")
 end
